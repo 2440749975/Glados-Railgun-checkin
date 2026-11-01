@@ -1,15 +1,18 @@
 name: auto check
 
 on:
+  # 仅保留手动触发。签到统一由 2440749975/2026-glados-checkin 负责，
+  # 避免两套脚本重复签到、重复推送通知。
+  # 如需恢复定时或推送触发，取消下面相应注释即可。
   workflow_dispatch:
-  push:
-    branches: [ master ]
-    paths-ignore:
-      - 'README.md'
-      - 'imgs/**'
-  schedule:
-    - cron: '18 9,12 * * *'
-      timezone: 'Asia/Shanghai'
+  # push:
+  #   branches: [ master ]
+  #   paths-ignore:
+  #     - 'README.md'
+  #     - 'imgs/**'
+  # schedule:
+  #   - cron: '18 9,12 * * *'
+  #     timezone: 'Asia/Shanghai'
 
 jobs:
   build:
